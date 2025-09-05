@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="weather-box">
+      <div class="input-content">
+        <input type="text"
+        id="searchInput"
+        placeholder="Search for city...">
+        <span>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </span>
+      </div>
+
+      <div class="city-title">Baku</div>
+      <div class="current-date">
+        <span class="week">Friday,</span>
+        <span class="date">5</span>
+        <span class="month">September</span>
+      </div>
+      <div class="status-img">
+        <img src="http://openweathermap.org/img/wn/01d@2x.png" >
+      </div>
+      <div class="weather-status">
+        <span>Sunny</span>
+      </div>
+      <div class="temperature-part">
+        <span>28°C</span>
+      </div>
+
+      <div class="features-weather">
+        <div class="wind-part features">
+          <span><i class="fa-solid fa-wind"></i></span>
+          <span class="speed-wind">4km/h</span>
+          <span class="wind">wind</span>
+        </div>
+
+        <div class="humidity-part features">
+          <span><i class="fa-solid fa-droplet"></i></span>
+          <span class="humidity-perc">48%</span>
+          <span class="humidity">Humidity</span>
+        </div>
+
+        <div class="visibility-part features">
+          <span><i class="fa-solid fa-eye"></i></span>
+          <span class="visibility-km">1.6km</span>
+          <span class="visibility">Visibility</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="weatherconditions.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
