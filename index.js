@@ -9,6 +9,7 @@ const humidityPerc = document.querySelector(".features-weather .humidity-perc");
 const visibilityKm = document.querySelector(".features-weather .visibility-km");
 const weatherStatus = document.querySelector(".weather-status span");
 const tempPart = document.querySelector(".temperature-part span");
+const searchIcon = document.querySelector(".fa-magnifying-glass");
 let apiKey = 'e97048756ed56f6c508a6e885fffcc6d';
 searchInput.addEventListener('keypress', (e) => {
   if (e.key === "Enter") {
@@ -17,6 +18,12 @@ searchInput.addEventListener('keypress', (e) => {
     searchInput.value = "";
   }
 });
+
+searchIcon.addEventListener("click",()=>{
+    searchWeather(searchInput.value);
+    searchInput.value = "";
+})
+
 function searchWeather(city) {
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=` + apiKey)
     .then(response => response.json())
