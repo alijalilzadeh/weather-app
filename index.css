@@ -1,22 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
 }
-body{
+
+body {
   height: 100vh;
   display: grid;
   place-items: center;
   background-color: #fff;
 }
-.container{
+
+.container {
+  padding: 2rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+
 }
-.weather-box{
+.weather-content{
+  width: 30%;
+}
+.weather-box {
+  width: 100%;
   background-color: #FFE142;
   display: flex;
   align-items: center;
@@ -26,75 +36,111 @@ body{
   border-radius: 25px;
   padding: 5rem 4rem;
 }
+.weather-box.error{
+  animation: errorAnimation .4s both;
+}
+@keyframes errorAnimation{
+  0%{
+    transform: translateX(-6px);
+  }
+  25%{
+    transform: translateX(-12px);
 
-.weather-box .city-title{
+  }
+  50%{
+    transform: translateX(-6px);
+
+  }
+  75%{
+    transform: translateX(-12px);
+
+  }
+  100%{
+    transform: translateX(0);
+
+  }
+}
+
+.weather-box .city-title span {
   color: #000;
   font-weight: 600;
   font-size: 35px;
   text-align: center;
-  margin-bottom: 10px;
 }
 
-.current-date{
+.current-date {
   background-color: #000;
   color: #fff;
   padding: .5rem 1rem;
   border-radius: 20px;
 }
-.current-date *{
+
+.current-date * {
   font-size: 17px;
 }
 
-.temperature-part{
-  font-size: 40px;
+.temperature-part {
+  font-size: 50px;
   font-weight: 600;
   margin-top: 10px;
 }
+
 .weather-status {
   font-size: 20px;
   font-weight: 500;
 }
-.features-weather{
+
+.weather-status span {
+  text-transform: capitalize;
+}
+
+.features-weather {
   display: flex;
   margin-top: 25px;
   gap: 2.5rem;
-  background-color:#000;
+  background-color: #000;
   color: #fff;
   padding: 2.4rem 2rem;
   border-radius: 16px;
 }
-.features{
+
+.features {
   display: flex;
   flex-direction: column;
   gap: .6rem;
   align-items: center;
   justify-content: center;
 }
-.features i{
+
+.features i {
   font-size: 26px;
 }
-.features span:nth-child(2){
+
+.features span:nth-child(2) {
   font-size: 18px;
 }
 
-.features span:nth-child(3){
+.features span:nth-child(3) {
   font-size: 14px;
   font-weight: 300;
 }
-.input-content{
+
+.input-content {
   position: absolute;
   display: flex;
   top: 20px;
   align-items: center;
   justify-content: center;
 }
-.input-content span i{
+
+.input-content span i {
   position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
 }
-#searchInput{
+
+#searchInput {
   border: none;
   width: 100%;
   padding: .5rem 1rem;
@@ -102,6 +148,100 @@ body{
   color: #333;
   font-size: 17px;
 }
-#searchInput:focus{
-outline: none;
+
+#searchInput:focus {
+  outline: none;
+}
+
+/* 
+}
+.weather-content{
+  width: 30%;
+}
+.weather-box {
+  width: 100%;
+  background-color: #FFE142;
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 25px;
+  padding: 5rem 4rem;
+}
+ */
+  @media (max-width:1024px){
+  .weather-content{
+    width: 50%;
+  }
+  .weather-box{
+    width: 100%;
+    gap: 1rem !important;
+    height: auto;
+  }
+  .weather-box .city-title span{
+    font-size: 40px;
+  }
+  .weather-box .current-date span{
+    white-space: nowrap;
+    font-size: 16px !important;
+  }
+  .features-weather{
+    display: flex;
+  }
+  .features{
+    white-space: nowrap;
+  }
+}
+
+
+ @media (max-width:768px){
+  .weather-content{
+    width: 60%;
+  }
+  .weather-box{
+    width: 100%;
+    gap: 1rem !important;
+    height: auto;
+  }
+  .weather-box .city-title span{
+    font-size: 40px;
+  }
+  .weather-box .current-date span{
+    white-space: nowrap;
+    font-size: 16px !important;
+  }
+  .features-weather{
+    display: flex;
+  }
+  .features{
+    white-space: nowrap;
+  }
+}
+
+@media (max-width:576px){
+  .weather-content{
+    width: 70%;
+  }
+  .weather-box{
+    width: 100%;
+    gap: 1rem !important;
+    height: auto;
+  }
+  .weather-box .city-title span{
+    font-size: 40px;
+  }
+  .weather-box .current-date span{
+    white-space: nowrap;
+    font-size: 16px !important;
+  }
+  .features-weather{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .features{
+    white-space: nowrap;
+
+  }
 }
